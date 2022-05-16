@@ -1,2 +1,16 @@
 # Jato-de-Baixos-N-veis-Noturnos
-Identificação NLLJ A identificação do JNLJ segue o método proposto por Rife et al. (2010) , que verifica a evolução temporal de uma estrutura vertical de vento horizontal (componentes zonal e meridional, respectivamente, u e v)
+Identificação NLLJ A identificação do JNLJ segue o método proposto por Rife et al. (2010) , que verifica a evolução temporal de uma estrutura vertical de vento horizontal (componentes zonal e meridional, respectivamente, u e v) de acordo com a expressão:
+
+NLLJ=λϕ\sqrt[(U_{00}^{L1} −U_{00}^{L2})− {(U}_{12}^{L1} −U_{12}^{L2})]2 +[(V_{00}^{L1} −V_{00}^{L2})− {(V}_{12}^{L1} −V_{12}^{L2})]2 (1)
+
+onde os subíndices 00 e 12 correspondem, respectivamente, às 00:00 (meia-noite) e 12:00 (meio-dia) hora local (LT); L1 e L2 são, respectivamente, os níveis próximo à superfície (originalmente 500 m AGL) e médio (originalmente 4000 m AGL); λ e Φ são dois números binários que comparam, respectivamente, a evolução temporal da velocidade do vento e seu cisalhamento vertical. Lambda é dado por:
+
+λ=0, se W_{00}^{L1}\ ≤{\ W}_{12}^{L1}  ou λ=1,se  W_{00}^{L1}>{\ W}_{12}^{L1}      (2)
+
+ou seja, λ compara a velocidade do vento próximo à superfície (W) à meia-noite local e ao meio-dia local. De acordo com a Equação (2), λ = 1 corresponde à velocidade do vento próximo à superfície à meia-noite local maior do que ao meio-dia local, caso contrário λ = 0. Como lambda, Φ assume os valores 0 ou 1 de acordo com os critérios:
+
+Φ=0, se W_{00}^{L1}\ ≤{\ W}_{00}^{L2}  ou  Φ=1,se  W_{00}^{L1}>{\ W}_{00}^{L2}      (2)
+
+i.e., Φ compares the near-surface (L1) and mid-level (L2) wind speeds at local midnight; Φ = 1 requires a near-surface wind velocity greater than that at mid-levels, otherwise Φ = 0. In this way, Φ ensures the existence of a vertical structure of the jet at local midnight.
+
+For the present study, the NLLJ index [Equation (2)] is adapted by using vertical levels in an isobaric vertical coordinate rather than height as proposed by Rife et al. (2010) or the sigma levels as in Algarra et al. (2019). The two pressure levels selected to calculate the NLLJ index are 900 and 650 hPa, corresponding approximately to 1000 and 4000 m above sea level, respectively. These two levels are more appropriate in order to define a vertical structure of the jet at midnight than the other two-level combinations tested over the region (1000–650, 1000–700, 1000–750, 1000–850, 1000–900, 900–850, 900–700, 900–650, 850–650, and 850–700 hPa; not shown). With these combinations, it was possible to verify that the NLLJ cores for the six regions are more evident (more intense) using the levels of 900–650 hPa. In this way, the levels that best represent the NLLJ indices in SA on a spatial scale and speed intensity are 900–650 hPa. The wind components at 00:00 LT are obtained as an average of 00:00 and 06:00 UTC (∼21:00 and 03:00 LT in most parts of the continent), while 12:00 LT is given by an average of 12:00 and 18:00 UTC (∼09:00 and 15:00 LT in most parts of the continent). Using these adaptations, the NLLJ index is calculated for each grid point by using the data from the ERA-Interim in South America, which allows the regions with NLLJ activity to be identified. The application of Equation (2) results in a daily NLLJ index that is used to obtain the seasonal climatology of the NLLJ and the associated moisture sources and sinks for the selected areas with a great frequency of occurrence of NLLJs.
