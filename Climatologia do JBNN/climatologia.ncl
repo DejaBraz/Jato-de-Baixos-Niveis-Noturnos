@@ -1,7 +1,7 @@
 load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_code.ncl"
 load "$NCARG_ROOT/lib/ncarg/nclscripts/csm/gsn_csm.ncl"
 ;load "/data2/FLEXPART/dejanira/Flexpart/Abril/BrasilSE/mapas/cmp_b2r.rgb"
-
+;Author : Dejanira F. Braz
 begin
 
 ;-- read the data
@@ -49,21 +49,21 @@ llj = f_llj->var1
         mpres                             = res
         mpres@mpGeophysicalLineThicknessF = 2          ;-- grosor de la linea contorno de continentes
        	mpres = True ; Habilita os recursos do mapa.;
-	mpres@gsnMaximize = False ; A figura ocupa toda a página.
-	mpres@gsnFrame = False ; Não avança o frame.;
-	mpres@gsnDraw = False ; Não desenha.
+	mpres@gsnMaximize = False ; A figura ocupa toda a pÃ¡gina.
+	mpres@gsnFrame = False ; NÃ£o avanÃ§a o frame.;
+	mpres@gsnDraw = False ; NÃ£o desenha.
 	mpres@mpFillOn = False ; Mapa sem preenchimento.
-	mpres@mpOutlineBoundarySets = "National" ; Mostra divisão dos países.
-	mpres@mpDataSetName = "Earth..4" ; Para a mostrar a divisão dos estados
-	mpres@mpDataBaseVersion = "MediumRes" ; brasileiros, são necessárias
-	mpres@mpOutlineSpecifiers = (/"Brazil:states"/); estas três linhas.
+	mpres@mpOutlineBoundarySets = "National" ; Mostra divisÃ£o dos paÃ­ses.
+	mpres@mpDataSetName = "Earth..4" ; Para a mostrar a divisÃ£o dos estados
+	mpres@mpDataBaseVersion = "MediumRes" ; brasileiros, sÃ£o necessÃ¡rias
+	mpres@mpOutlineSpecifiers = (/"Brazil:states"/); estas trÃªs linhas.
 	mpres@mpMinLatF = -60. ; Latitude sul.
 	mpres@mpMaxLatF = 20. ; Latitude norte.
 	mpres@mpMinLonF = -90. ; Longitude oeste.
 	mpres@mpMaxLonF = -10. ; Longitude leste.
-	mpres@gsnMajorLonSpacing = 10 ; Espaçamento do eixo x da longitude.
-	mpres@gsnMajorLatSpacing = 10 ; Espaçamento do eixo y da latitude.
-	mpres@tmXBMinorOn = False ; Desabilita os traços secundários dos
+	mpres@gsnMajorLonSpacing = 10 ; EspaÃ§amento do eixo x da longitude.
+	mpres@gsnMajorLatSpacing = 10 ; EspaÃ§amento do eixo y da latitude.
+	mpres@tmXBMinorOn = False ; Desabilita os traÃ§os secundÃ¡rios dos
 	mpres@tmYLMinorOn = False ; eixos x e y.
 ;Contorno
         cnres                             = res
@@ -88,9 +88,9 @@ llj = f_llj->var1
   	       
   		
   		cnres@cnLinesOn = False ;-- turn lines on  lineas de contorno en cada nivel
-       	        cnres@lbTitleOn = True ; Habilita um título para a legenda.
-		cnres@lbTitleString = "(mm/day)" ; Título da legenda.
-		cnres@lbTitleFontHeightF = 0.025 ; Tamanho da fonte do título da legenda.
+       	        cnres@lbTitleOn = True ; Habilita um tÃ­tulo para a legenda.
+		cnres@lbTitleString = "(mm/day)" ; TÃ­tulo da legenda.
+		cnres@lbTitleFontHeightF = 0.025 ; Tamanho da fonte do tÃ­tulo da legenda.
 		cnres@pmLabelBarOrthogonalPosF = 0.15 
 		cnres@lbLabelFontHeightF = 0.025 ; Tamanho dos valores da; legenda.
 ;-- polymarker
