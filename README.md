@@ -1,7 +1,7 @@
 ORIGINAL RESEARCH article
 Front. Environ. Sci., 22 April 2021 | https://doi.org/10.3389/fenvs.2021.657764
 
-# Jato-de-Baixos-Niveis-Noturnos
+# Jato-de-Baixos-Níveis-Noturnos
 Identificação NLLJ A identificação do JNLJ segue o método proposto por Rife et al. (2010) , que verifica a evolução temporal de uma estrutura vertical de vento horizontal (componentes zonal e meridional, respectivamente, u e v) de acordo com a expressão:
 
 NLLJ=λϕsqrt[(U_{00}^{L1} −U_{00}^{L2})− {(U}_{12}^{L1} −U_{12}^{L2})]2 +[(V_{00}^{L1} −V_{00}^{L2})− {(V}_{12}^{L1} −V_{12}^{L2})]2 (1)
