@@ -1,3 +1,6 @@
+#
+# Author: Dejanira F. Braz
+#
 import netCDF4 as nc4
 
 import numpy as np
