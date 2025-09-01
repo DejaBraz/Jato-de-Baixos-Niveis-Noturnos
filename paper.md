@@ -10,12 +10,18 @@ tags:
 authors:
   - name: Dejanira Ferreira Braz
     orcid: 0009-0000-1654-9063
-    affiliation: 1
+    corresponding: true
+    affiliation: "1"
 affiliations:
-  - name: Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo (IAG-USP), Brazil
-    index: 1
-date: 2025-09-01
+ - name: Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo (IAG-USP), Brazil
+   index: 1
+   ror: 02en5vm97
+date: 01 September 2025
 bibliography: paper.bib
+
+# Optional fields if submitting to a AAS journal too:
+# aas-doi: 10.3847/xxxxx
+# aas-journal: Astrophysical Journal
 ---
 
 # Summary
