@@ -18,55 +18,63 @@ affiliations:
    ror: 02en5vm97
 date: 01 September 2025
 bibliography: paper.bib
-
-# Optional fields if submitting to a AAS journal too:
-# aas-doi: 10.3847/xxxxx
-# aas-journal: Astrophysical Journal
 ---
 
 # Summary
 
-Nocturnal Low-Level Jets (NLLJs) are low-tropospheric wind maxima that develop during nighttime due to inertial oscillations and radiative cooling of the boundary layer. They are a key driver of meridional moisture transport from tropical to subtropical regions and strongly modulate rainfall patterns, severe weather events, and climate variability. Over South America, NLLJs play a central role in the intensification of the South American Low-Level Jet (SALLJ), influencing the South Atlantic Convergence Zone (SACZ) and contributing to hydrological extremes. Their identification is therefore crucial for weather forecasting, climate monitoring, and risk management in agriculture and infrastructure.  
+Nocturnal Low-Level Jets (NLLJs) are nighttime wind maxima in the lower troposphere driven by inertial oscillations and radiative cooling of the boundary layer. These jets play a central role in the meridional transport of moisture from tropical to subtropical regions, influencing precipitation patterns, severe weather, and hydrological extremes across South America.  
 
-**JBNN** is an open-source Python-based software that implements the NLLJ index proposed by Rife et al. [@rife2010], adapted for isobaric coordinates (900–650 hPa), to identify and map nocturnal low-level jets over South America. The package provides a complete workflow — from downloading reanalysis data (ERA5) [@era5], preprocessing, and index calculation, to visualization and case-study analysis. The software is distributed under the MIT License, ensuring free use, reproducibility, and modification by the scientific community.
+**JBNN** is an open-source Python-based tool for identifying and mapping NLLJs using ERA5 reanalysis data. It implements the Rife et al. (2010) intensity index adapted for isobaric coordinates (900–650 hPa) and provides an automated workflow from data acquisition to visualization. The package supports climatological analysis and event-based diagnostics, ensuring reproducibility and accessibility for the scientific community.
 
-# Statement of need
+---
 
-While several climatological studies have described the occurrence of NLLJs over South America, the methodologies for their objective identification have often remained restricted to individual research groups, with codes that are not publicly available or difficult to reproduce. Most approaches rely on custom implementations combining reanalysis datasets with vertical wind shear diagnostics, limiting accessibility for broader use.  
+# Statement of Need
 
-**JBNN** addresses this gap by providing:  
+Although several studies have characterized NLLJs in South America, objective and reproducible methodologies for their detection remain limited. Most implementations are private or rely on rigid thresholds (e.g., Bonner, 1968), making replication difficult.  
 
-- A reproducible and transparent pipeline for NLLJ identification based on ERA5 data [@era5].  
-- Automated preprocessing routines using Climate Data Operators (CDO) [@cdo].  
-- Ready-to-use Python scripts and notebooks for both climatological and case-study analysis.  
-- Integration with widely adopted scientific libraries such as xarray [@hoyer2017], Cartopy [@metoffice2018cartopy], Matplotlib [@hunter2007], and NumPy.  
-- An open-source implementation that enables reproducibility of climatological studies such as Braz et al. (2021) [@braz2021].  
+**JBNN** addresses these issues by offering:
+- An **open-source**, fully automated pipeline for ERA5-based NLLJ detection.
+- **Standardized preprocessing** using CDO and Python libraries (`xarray`, `Cartopy`, `Matplotlib`).
+- Tools for both **climatology** and **case-study analysis**.
+- **Reproducibility** of previous research, such as Braz et al. (2021), enabling consistent comparisons across studies.
 
-By lowering the technical barriers for NLLJ analysis, **JBNN** is a valuable tool for meteorologists, climate scientists, and data scientists interested in atmospheric dynamics, moisture transport, and extreme weather events.
+---
 
-# Functionality
+# Scientific Background
 
-The repository provides the following modules and scripts:
+NLLJs exhibit strong nocturnal wind maxima typically near 900 hPa and are key drivers of moisture transport that feed large-scale systems such as the **South American Low-Level Jet (SALLJ)** and the **South Atlantic Convergence Zone (SACZ)**. They modulate seasonal precipitation and contribute to extreme weather events and agricultural impacts.  
 
-- **Data acquisition**: `Download ERA.ipynb` retrieves ERA5 reanalysis datasets directly from the Copernicus Climate Data Store.  
-- **Preprocessing**: `run_JBNN.sh` automates daily mean calculations, vertical shear extraction (900–650 hPa), and wind magnitude using CDO [@cdo].  
-- **NLLJ index computation**: Implements the Rife et al. (2010) [@rife2010] formulation adapted to isobaric levels, storing results in NetCDF format for easy analysis.  
-- **Visualization**:  
-  - `Mapa JBNN.py`: plots seasonal maps of the NLLJ index with shapefiles of Brazilian states and South American basins.  
-  - `DIAS_NLLJ.py`: generates daily frequency maps of NLLJ occurrences.  
-  - `diascomjato.ipynb`: notebook demonstrating case studies and exploratory data analysis.  
+Mechanisms of formation include:
+- **Inertial oscillation** in the nocturnal boundary layer (Blackadar, 1957).
+- **Topographic channeling** east of the Andes (e.g., Chaco Jet).
+- **Baroclinicity and surface heterogeneity** (land–sea contrasts, vegetation gradients).  
 
-The workflow ensures that researchers can replicate climatologies and identify NLLJ cores across South America in a straightforward and automated way.
+NLLJs over South America display a marked seasonality, with peak frequency in austral summer (DJF) and persistence varying from 1–2 days to over a week in northeastern Brazil. They influence mesoscale convective systems, cyclogenesis in the La Plata Basin, and the hydrological cycle (Vera et al., 2006; Braz et al., 2021).
 
-# Example
+---
 
-As an example, applying **JBNN** to ERA5 reanalysis data during the austral summer (DJF) highlights the climatological core regions of NLLJ activity over central Brazil and northern Argentina. Daily occurrence maps (from `DIAS_NLLJ.py`) can be aggregated into seasonal climatologies (`Mapa JBNN.py`), providing insights into the role of NLLJs in sustaining regional precipitation patterns.  
+# Functionality and Workflow
 
-A typical workflow is as follows:
+The **JBNN** package provides:
+- **Data Acquisition**: `Download ERA.ipynb` retrieves ERA5 u/v wind components and geopotential for pressure levels.
+- **Preprocessing**: `run_JBNN.sh` computes daily means, vertical wind shear (900–650 hPa), and wind magnitude using **CDO**.
+- **Index Computation**: Implements Rife et al. (2010) index adapted for pressure levels:
+  \[
+  \text{NLLJ} = \lambda \phi \sqrt{[(U_{L1}^{00}-U_{L2}^{00})-(U_{L1}^{12}-U_{L2}^{12})]^2+[(V_{L1}^{00}-V_{L2}^{00})-(V_{L1}^{12}-V_{L2}^{12})]^2}
+  \]
+  where \( L_1 = 900 \,\text{hPa}\) and \( L_2 = 650 \,\text{hPa}\).
+- **Visualization**:
+  - `Mapa JBNN.py`: Plots seasonal climatologies with shapefiles of Brazilian states and basins.
+  - `DIAS_NLLJ.py`: Generates daily frequency maps of NLLJ occurrences.
+  - `diascomjato.ipynb`: Interactive notebook for case studies.
 
+### **Dependencies**
+- Python 3.8+
+- `xarray`, `numpy`, `matplotlib`, `cartopy`, `shapely`
+- **CDO** for preprocessing
+
+### **Installation**
 ```bash
-# Run preprocessing for ERA5 data
-bash run_JBNN.sh
-
-# Plot the seasonal climatology
-python Mapa\ JBNN.py
+git clone https://github.com/DejaBraz/Jato-de-Baixos-Niveis-Noturnos
+cd Jato-de-Baixos-Niveis-Noturnos
+pip install -r requirements.txt
