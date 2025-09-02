@@ -34,16 +34,7 @@ Understanding the dynamics of NLLJs is crucial for regional climate analysis and
 
 # Software Architecture and Implementation
 
-The NLLJ package is structured into modular components:
-- **Data acquisition**: `Download ERA.ipynb` retrieves ERA5 hourly wind and geopotential fields through the Copernicus Climate Data Store API [@era5].
-- **Preprocessing**: `run_JBNN.sh` leverages **Climate Data Operators (CDO)** [@cdo] to compute daily means, vertical shear, and wind magnitude.
-- **Index computation**: `compute_index()` calculates the NLLJ intensity index, following Rife et al. [@rife2010], adapted for 900–650 hPa levels.
-- **Visualization**:
-    - `Mapa JBNN.py`: Generates seasonal climatology maps of NLLJ frequency and intensity.
-    - `DIAS_NLLJ.py`: Produces daily maps for case-study analysis.
-    - `diascomjato.ipynb`: Interactive Jupyter notebook for exploratory workflows.
-
-The codebase emphasizes **readability**, **parallel processing**, and **compatibility with NetCDF standards**, making it suitable for both research and operational environments.
+The NLLJs package is organized into modular components that guide the user from raw reanalysis data to meaningful scientific products. Data acquisition is performed through Download ERA.ipynb, which retrieves ERA5 hourly wind and geopotential fields via the Copernicus Climate Data Store API [@era5]. Preprocessing is handled by run_JBNN.sh, which uses Climate Data Operators (CDO) [@cdo] to compute daily means, vertical shear, and wind magnitude. The computation of the NLLJ intensity index is carried out by the function compute_index(), which follows the formulation of Rife et al. [@rife2010] but is adapted for 900–650 hPa levels. Visualization is supported by multiple scripts: Mapa JBNN.py generates seasonal climatology maps of NLLJ frequency and intensity; DIAS_NLLJ.py produces daily maps for case-study analysis; and diascomjato.ipynb provides an interactive Jupyter notebook for exploratory workflows. The design emphasizes readability, parallel processing, and compatibility with NetCDF standards, ensuring that the package is suitable for both academic research and operational applications.
 
 ---
 # Key Functionalities
