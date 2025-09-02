@@ -1,5 +1,6 @@
 name: Build JOSS Paper
 
+# Dispara quando houver push ou pull request na branch main
 on:
   push:
     branches: [ main ]
@@ -9,18 +10,18 @@ jobs:
   build-paper:
     runs-on: ubuntu-latest
     steps:
+      # Passo 1: clonar o repositório
       - uses: actions/checkout@v3
 
-      # Install Pandoc and pandoc-citeproc
-      - name: Install Pandoc and pandoc-citeproc
+      # Passo 2: rodar o Docker do JOSS para compilar o paper
+      - name: Build paper with Docker
         run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc pandoc-citeproc
+          docker run --rm \
+            --volume $PWD/paper:/data \
+            --env JOURNAL=joss \
+            openjournals/inara
 
-      - name: Build PDF with Pandoc
-        run: pandoc paper.md -o paper.pdf --filter pandoc-citeproc
-        working-directory: paper
-
+      # Passo 3: salvar o PDF como artefato
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
