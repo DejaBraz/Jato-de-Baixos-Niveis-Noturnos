@@ -13,7 +13,12 @@ jobs:
       # Passo 1: clonar o repositório
       - uses: actions/checkout@v3
 
-      # Passo 2: rodar o Docker do JOSS para compilar o paper
+      # Passo 2: gerar PDF com Pandoc localmente
+      - name: Build PDF with Pandoc
+        run: pandoc paper.md -o paper.pdf --filter pandoc-citeproc
+        working-directory: paper
+
+      # Passo 3: rodar o Docker do JOSS para compilar o paper
       - name: Build paper with Docker
         run: |
           docker run --rm \
@@ -21,7 +26,7 @@ jobs:
             --env JOURNAL=joss \
             openjournals/inara
 
-      # Passo 3: salvar o PDF como artefato
+      # Passo 4: salvar o PDF como artefato
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
