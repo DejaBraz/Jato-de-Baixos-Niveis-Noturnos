@@ -63,4 +63,7 @@ bash run_JBNN.sh
 ```from nllj import compute_index
 compute_index("era5_input.nc", "nllj_index.nc")
 ```
+### 3. Visualization
+```python Mapa_JBNN.py
+```
 # References
