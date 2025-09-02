@@ -46,11 +46,11 @@ The NLLJ package is structured into modular components:
 The codebase emphasizes **readability**, **parallel processing**, and **compatibility with NetCDF standards**, making it suitable for both research and operational environments.
 
 ---
-**Key Functionalities**
+# Key Functionalities
 
 The NLLJs package offers several key functionalities. It automates the download and preprocessing of ERA5 data for the South American domain and applies an objective methodology for identifying NLLJ events based on intensity and vertical shear criteria. It can generate climatological maps and time series to investigate long-term variability and also provides event-scale tools for analyzing the role of NLLJs in convective outbreaks. The package outputs export-ready datasets that integrate easily with visualization packages and climate diagnostics. By moving seamlessly from raw data to high-level products, the tool facilitates both discovery and reproducibility in scientific workflows.
 
-**Limitations**
+# Limitations
 
 Although the NLLJs package provides an accessible and standardized methodology, some limitations remain. The detection is currently restricted to isobaric levels between 900–650 hPa, and extending to model levels would improve vertical resolution. The workflow depends on ERA5 data availability, and adaptation to other reanalyses such as MERRA-2 or JRA-55 would require adjustments. The methodology is designed primarily for research use and may not capture all subtleties relevant to operational forecasting. Additionally, computational costs can be significant when processing multi-decadal datasets, although parallelization strategies help mitigate this issue. Future developments aim to extend compatibility with additional datasets, incorporate uncertainty quantification, and refine thresholds for applications in hydrometeorology and climate extremes.
 # Detailed Example
@@ -59,5 +59,8 @@ Although the NLLJs package provides an accessible and standardized methodology, 
 ```bash
 bash run_JBNN.sh
 ```
-
+### 2. Index computation
+```from nllj import compute_index
+compute_index("era5_input.nc", "nllj_index.nc")
+```
 # References
