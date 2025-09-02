@@ -23,7 +23,7 @@ jobs:
 
       # Passo 3: salvar o PDF como artefato
       - name: Upload PDF
-        uses: actions/upload-artifact@v3
+        uses: upload-artifact@v4
         with:
           name: paper-pdf
           path: paper/paper.pdf
