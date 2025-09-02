@@ -12,11 +12,11 @@ jobs:
       # Passo 1: clonar o repositório
       - uses: actions/checkout@v3
 
-      # Passo 2: instalar dependências do Pandoc
-      - name: Instalar Pandoc + Tectonic
+      # Passo 2: instalar tectonic (engine LaTeX) via pip
+      - name: Instalar tectonic
         run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc tectonic
+          python3 -m pip install --upgrade pip
+          pip install tectonic
 
       # Passo 3: gerar PDF com Pandoc (teste local)
       - name: Build PDF with Pandoc
@@ -37,7 +37,7 @@ jobs:
             openjournals/inara
 
       # Passo 5: salvar os PDFs como artefato
-      - name: Upload PDF
+      - name: Upload PDFs
         uses: actions/upload-artifact@v4
         with:
           name: paper-pdfs
