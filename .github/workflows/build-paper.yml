@@ -1,11 +1,10 @@
 name: Build JOSS Paper
 
-# Dispara quando houver push ou pull request na branch main 
 on:
   push:
     branches: [ main ]
-  pull_request: 
- 
+  pull_request:
+
 jobs:
   build-paper:
     runs-on: ubuntu-latest
@@ -13,7 +12,23 @@ jobs:
       # Passo 1: clonar o repositório
       - uses: actions/checkout@v3
 
-      # Passo 2: rodar o Docker do JOSS para compilar o paper
+      # Passo 2: instalar dependências do Pandoc
+      - name: Instalar Pandoc + Tectonic
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc tectonic
+
+      # Passo 3: gerar PDF com Pandoc (teste local)
+      - name: Build PDF with Pandoc
+        working-directory: paper
+        run: |
+          pandoc paper.md \
+            --citeproc \
+            --pdf-engine=tectonic \
+            --resource-path=.. \
+            -o paper-pandoc.pdf
+
+      # Passo 4: rodar o Docker do JOSS para compilar o paper oficial
       - name: Build paper with Docker
         run: |
           docker run --rm \
@@ -21,9 +36,11 @@ jobs:
             --env JOURNAL=joss \
             openjournals/inara
 
-      # Passo 3: salvar o PDF como artefato
+      # Passo 5: salvar os PDFs como artefato
       - name: Upload PDF
         uses: actions/upload-artifact@v4
         with:
-          name: paper-pdf
-          path: paper/paper.pdf
+          name: paper-pdfs
+          path: |
+            paper/paper.pdf
+            paper/paper-pandoc.pdf
