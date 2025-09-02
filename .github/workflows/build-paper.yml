@@ -1,6 +1,6 @@
 name: Build JOSS Paper
 
-# Dispara quando houver push ou pull request na branch main
+# Dispara quando houver push ou pull request na branch main 
 on:
   push:
     branches: [ main ]
