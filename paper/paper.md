@@ -70,3 +70,4 @@ The codebase emphasizes **readability**, **parallel processing**, and **compatib
 ```bash
 bash run_JBNN.sh
 ```
+# References
