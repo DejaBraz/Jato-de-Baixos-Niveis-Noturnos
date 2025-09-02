@@ -11,12 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build paper with Docker
+      # Install Pandoc and pandoc-citeproc
+      - name: Install Pandoc and pandoc-citeproc
         run: |
-          docker run --rm \
-            --volume $PWD/paper:/data \
-            --env JOURNAL=joss \
-            openjournals/inara
+          sudo apt-get update
+          sudo apt-get install -y pandoc pandoc-citeproc
 
       - name: Build PDF with Pandoc
         run: pandoc paper.md -o paper.pdf --filter pandoc-citeproc
