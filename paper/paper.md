@@ -20,24 +20,15 @@ bibliography: paper.bib
 
 # Summary
 
-Nocturnal Low-Level Jets (NLLJs) are nighttime wind maxima in the lower troposphere, typically forming between 900–650 hPa due to inertial oscillations and radiative cooling of the boundary layer. Over South America, NLLJs play a fundamental role in meridional moisture transport from the Amazon Basin toward subtropical regions, significantly influencing rainfall patterns, severe convective events, and the hydrological cycle [@rife2010]. Their occurrence is particularly relevant during austral summer, when they contribute to the formation of the South Atlantic Convergence Zone (SACZ) and the development of mesoscale convective systems.
+Nocturnal Low-Level Jets (NLLJs) are nighttime wind maxima in the lower troposphere, typically forming between 900–650 hPa due to inertial oscillations and radiative cooling of the boundary layer. Over South America, NLLJs play a fundamental role in meridional moisture transport from the Amazon Basin toward subtropical regions, significantly influencing rainfall patterns, severe convective events, and the hydrological cycle [@rife2010; @vera2006; @marengo2004]. Their occurrence is particularly relevant during austral summer, when they contribute to the formation of the South Atlantic Convergence Zone (SACZ) and the development of mesoscale convective systems.
 
-The NLLJs is an open-source Python package that implements an objective identification method for NLLJs based on the intensity index proposed by Rife et al. [@rife2010], adapted for isobaric levels (900–650 hPa). The tool provides a complete and automated workflow, from downloading ERA5 reanalysis data [@era5] and preprocessing with CDO [@cdo], to computing the NLLJ index and generating climatological maps.
-
-
+The NLLJs package is an open-source Python implementation of an objective detection method for NLLJs based on the intensity index proposed by Rife et al. [@rife2010], adapted for isobaric levels (900–650 hPa). The tool provides a fully automated workflow, from downloading ERA5 reanalysis data [@era5] and preprocessing with CDO [@cdo], to computing the NLLJ index and generating climatological diagnostics. By combining transparent algorithms with open data, it enables reproducible and accessible studies of low-level jet dynamics across South America.
 
 ---
 
 # Motivation and Scientific Relevance
 
-Understanding the dynamics of NLLJs is crucial for regional climate analysis and disaster risk management. These jets enhance low-level moisture flux convergence, fueling convective systems that often lead to extreme precipitation and flooding [@braz2021]. Despite their importance, existing detection methods are often limited to proprietary codes or require advanced programming expertise, hindering reproducibility and accessibility.
-
-NLLJs bridges this gap by offering:
-- A fully reproducible workflow using **open data** (ERA5) [@era5] and **open-source tools** [@cdo].
-- A user-friendly interface for climatological studies and event-specific diagnostics.
-- Integration with widely used Python libraries (`xarray` [@hoyer2017], `cartopy` [@metoffice2018cartopy], `matplotlib` [@hunter2007]), allowing seamless incorporation into scientific pipelines.
-
-By lowering technical barriers, NLJJs facilitates research on the variability and impacts of NLLJs, contributing to improved understanding of moisture transport and associated extreme weather events.
+Understanding the dynamics of NLLJs is crucial for regional climate analysis and disaster risk management. These jets enhance low-level moisture flux convergence, fueling convective systems that often lead to extreme precipitation, flooding, and agricultural losses [@braz2021; @montini2019]. Despite their importance, many existing detection methods rely on proprietary codes, lack full documentation, or require advanced computational expertise, limiting their use outside specialized groups. The NLLJs package addresses this gap by providing a reproducible workflow based on open data (ERA5) [@era5] and open-source tools [@cdo]. It offers a modular codebase that integrates seamlessly with the Python scientific ecosystem (xarray [@hoyer2017], cartopy [@metoffice2018cartopy], matplotlib [@hunter2007]) and delivers ready-to-use scripts for both climatological analysis and case studies. Furthermore, the package implements a standardized adaptation of the NLLJ intensity index, ensuring comparability with previous research while extending applicability to South American domains. By lowering technical barriers, it broadens access to NLLJ research, enabling meteorologists, climate scientists, and hydrologists to incorporate low-level jet diagnostics into their workflows and better quantify their role in extreme weather events.
 
 ---
 
@@ -55,7 +46,13 @@ The NLLJ package is structured into modular components:
 The codebase emphasizes **readability**, **parallel processing**, and **compatibility with NetCDF standards**, making it suitable for both research and operational environments.
 
 ---
+**Key Functionalities**
 
+The NLLJs package offers several key functionalities. It automates the download and preprocessing of ERA5 data for the South American domain and applies an objective methodology for identifying NLLJ events based on intensity and vertical shear criteria. It can generate climatological maps and time series to investigate long-term variability and also provides event-scale tools for analyzing the role of NLLJs in convective outbreaks. The package outputs export-ready datasets that integrate easily with visualization packages and climate diagnostics. By moving seamlessly from raw data to high-level products, the tool facilitates both discovery and reproducibility in scientific workflows.
+
+**Limitations**
+
+Although the NLLJs package provides an accessible and standardized methodology, some limitations remain. The detection is currently restricted to isobaric levels between 900–650 hPa, and extending to model levels would improve vertical resolution. The workflow depends on ERA5 data availability, and adaptation to other reanalyses such as MERRA-2 or JRA-55 would require adjustments. The methodology is designed primarily for research use and may not capture all subtleties relevant to operational forecasting. Additionally, computational costs can be significant when processing multi-decadal datasets, although parallelization strategies help mitigate this issue. Future developments aim to extend compatibility with additional datasets, incorporate uncertainty quantification, and refine thresholds for applications in hydrometeorology and climate extremes.
 # Detailed Example
 
 ### 1. Data preprocessing
