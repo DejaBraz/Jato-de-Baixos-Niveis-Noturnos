@@ -72,3 +72,4 @@ The codebase emphasizes **readability**, **parallel processing**, and **compatib
 ### **1. Data preprocessing**
 ```bash
 bash run_JBNN.sh
+# References
