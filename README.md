@@ -53,3 +53,7 @@ The wind components at 00:00 LT are obtained by averaging **00:00 and 06:00 UTC*
 Using these adaptations, the NLLJ index is calculated for each grid point using **ERA-Interim data** over South America, which allows the identification of regions with NLLJ activity.  
 
 The application of the equation results in a **daily NLLJ index**, which is used to obtain the **seasonal climatology** of the NLLJ and the associated **moisture sources and sinks** for the selected areas with high frequency of NLLJ occurrence.
+
+## License
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
