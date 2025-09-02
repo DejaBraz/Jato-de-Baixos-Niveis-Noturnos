@@ -10,14 +10,11 @@ tags:
 authors:
   - name: Dejanira Ferreira Braz
     orcid: 0009-0000-1654-9063
-    corresponding: true
-    email: dejanira.braz@usp.br
     affiliation: "1"
 affiliations:
  - name: Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo (IAG-USP), Brazil
    index: 1
-   ror: 02en5vm97
-date: 2025-09-02
+   date: 2025-09-02
 bibliography: paper.bib
 ---
 
