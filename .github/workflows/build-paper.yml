@@ -3,8 +3,8 @@ on:
   push:
     paths:
       - paper.md
-      - simulacrumWorkflowrRef.bib
-      - .github/workflows/pdf_gen.yml
+      - paper.bib
+      - .github/workflows/build-paper.yml
 
 jobs:
   paper:
