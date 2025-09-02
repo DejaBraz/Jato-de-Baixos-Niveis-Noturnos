@@ -1,5 +1,5 @@
 ---
-title: 'JBNN: A Python-based Tool for the Identification and Mapping of Nocturnal Low-Level Jets over South America'
+title: 'NLLJs: A Python-based Tool for the Identification and Mapping of Nocturnal Low-Level Jets over South America'
 tags:
   - Python
   - meteorology
@@ -24,7 +24,7 @@ bibliography: paper.bib
 
 Nocturnal Low-Level Jets (NLLJs) are nighttime wind maxima in the lower troposphere, typically forming between 900–650 hPa due to inertial oscillations and radiative cooling of the boundary layer. Over South America, NLLJs play a fundamental role in meridional moisture transport from the Amazon Basin toward subtropical regions, significantly influencing rainfall patterns, severe convective events, and the hydrological cycle. Their occurrence is particularly relevant during austral summer, when they contribute to the formation of the South Atlantic Convergence Zone (SACZ) and the development of mesoscale convective systems.
 
-**JBNN** is an open-source Python package that implements an objective identification method for NLLJs based on the intensity index proposed by Rife et al. (2010), adapted for isobaric levels (900–650 hPa). The tool provides a complete and automated workflow, from downloading ERA5 reanalysis data and preprocessing with CDO, to computing the NLLJ index and generating climatological maps. Its open-source nature ensures reproducibility and transparency, making it a valuable resource for atmospheric scientists and operational forecasters.
+The NLLJs is an open-source Python package that implements an objective identification method for NLLJs based on the intensity index proposed by Rife et al. (2010), adapted for isobaric levels (900–650 hPa). The tool provides a complete and automated workflow, from downloading ERA5 reanalysis data and preprocessing with CDO, to computing the NLLJ index and generating climatological maps (Figure 1). Its open-source nature ensures reproducibility and transparency, making it a valuable resource for atmospheric scientists and operational forecasters.
 
 <p align="center">
   <img src="Figure/NLLJ.png" alt="Climatology of NLLJs" width="300">
