@@ -10,9 +10,9 @@ from cartopy import config
 import cartopy.crs as ccrs
 
 
-nc1 = nc4.Dataset('DJF.nc','r+') #dados de entrada
+nc1 = nc4.Dataset('DJF.nc','r+') 
 
-nc = nc4.Dataset('1.nc','r+') #dados de saida
+nc = nc4.Dataset('1.nc','r+') 
 
 
 temp = nc1.variables['u'][:] #variavel
