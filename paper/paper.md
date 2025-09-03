@@ -67,7 +67,7 @@ bash run_JBNN.sh
 ``` python compute_index.py era5_input.nc nllj_index.nc
 
 ### 3. Visualization
-```  python Mapa_JBNN.py
+```  python Mapa_JBNN.py ´´´´
 
 # Acknowledgements
 
