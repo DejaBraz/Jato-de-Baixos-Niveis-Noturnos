@@ -63,4 +63,9 @@ compute_index("era5_input.nc", "nllj_index.nc")
 python Mapa_JBNN.py
 ```
 
+# Acknowledgements
+
+This work was supported by CNPq (project number 465501/2014-1).  
+The author thanks the Institute of Astronomy, Geophysics and Atmospheric Sciences (IAG-USP) and the Climate Studies Group (GREC) for institutional support and valuable discussions during the development of this tool.
+
 # References
