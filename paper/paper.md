@@ -45,23 +45,29 @@ The NLLJs package offers several key functionalities. It automates the download 
 # Limitations
 
 Although the NLLJs package provides an accessible and standardized methodology, some limitations remain. The detection is currently restricted to isobaric levels between 900–650 hPa, and extending to model levels would improve vertical resolution. The workflow depends on ERA5 data availability, and adaptation to other reanalyses such as MERRA-2 or JRA-55 would require adjustments. The methodology is designed primarily for research use and may not capture all subtleties relevant to operational forecasting. Additionally, computational costs can be significant when processing multi-decadal datasets, although parallelization strategies help mitigate this issue. Future developments aim to extend compatibility with additional datasets, incorporate uncertainty quantification, and refine thresholds for applications in hydrometeorology and climate extremes.
+
+
+# Installation
+
+The package is distributed as an open repository on GitHub and does not require installation through PyPI. 
+Users can obtain the code by cloning the repository:
+
+```bash
+git clone https://github.com/DejaBraz/Nocturnal-Low-Level-Jets.git
+cd Nocturnal-Low-Level-Jets
+
 # Detailed Example
 
 ### 1. Data preprocessing
+
 ```bash
 bash run_JBNN.sh
-```
 
 ### 2. Index computation
-```Python
-from nllj import compute_index
-compute_index("era5_input.nc", "nllj_index.nc")
-```
+``` python compute_index.py era5_input.nc nllj_index.nc
 
 ### 3. Visualization
-``` Python
-python Mapa_JBNN.py
-```
+```  python Mapa_JBNN.py
 
 # Acknowledgements
 
