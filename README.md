@@ -57,3 +57,33 @@ The application of the equation results in a **daily NLLJ index**, which is used
 ## License
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
+---
+
+## Practical Usage
+
+To reproduce the analysis, follow these steps:
+
+1. **Create an account at the Copernicus Climate Data Store (CDS)**  
+   - Register for free at [CDS Registration](https://cds.climate.copernicus.eu/user/register).  
+   - Once registered, generate your **API key** (`.cdsapirc` file) following the instructions at:  
+     [CDS API: How to use](https://cds.climate.copernicus.eu/api-how-to).  
+
+2. **Download ERA5 data**  
+   - Install the CDS API client in Python:  
+     ```bash
+     pip install cdsapi
+     ```  
+   - Use the CDS API to download the required ERA5 reanalysis variables (u- and v-wind components) at the pressure levels of interest (900 and 650 hPa).  
+   - An example Python script is provided in this repository to automate the download process.  
+
+3. **Run the NLLJ index calculation**  
+   - Execute the processing script:  
+     ```bash
+     bash run_NLLJ.sh
+     ```  
+   - This script calculates the **daily NLLJ index** for each grid point based on ERA5 data.  
+
+4. **Plot the results**  
+   - Once the index is computed, use the provided Python plotting scripts to visualize the **spatial distribution**, **seasonal climatology**, and other diagnostics of the NLLJ over South America.  
+
+---
