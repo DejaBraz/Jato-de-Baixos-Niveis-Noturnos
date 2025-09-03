@@ -52,22 +52,28 @@ Although the NLLJs package provides an accessible and standardized methodology, 
 The package is distributed as an open repository on GitHub and does not require installation through PyPI. 
 Users can obtain the code by cloning the repository:
 
-```bash
+```
+bash
 git clone https://github.com/DejaBraz/Nocturnal-Low-Level-Jets.git
 cd Nocturnal-Low-Level-Jets
-
+´´´´
 # Detailed Example
 
 ### 1. Data preprocessing
 
-```bash
+```
+bash
 bash run_JBNN.sh
-
+´´´´
 ### 2. Index computation
-``` python compute_index.py era5_input.nc nllj_index.nc
+```
+python compute_index.py era5_input.nc nllj_index.nc
+´´´´
 
 ### 3. Visualization
-```  python Mapa_JBNN.py ´´´´
+```
+python Mapa_JBNN.py 
+´´´´
 
 # Acknowledgements
 
