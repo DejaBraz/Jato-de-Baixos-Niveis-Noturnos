@@ -1,6 +1,12 @@
-[![](https://img.shields.io/badge/DOI-10.3389/fenvs.2021.657764-informational?style=flat&logo=doi&logoColor=white&color=CC2927)](https://doi.org/10.3389/fenvs.2021.657764)
 
-# Nocturnal Low-Level Jets (NLLJ)
+# Nocturnal Low-Level Jets
+
+[![DOI](https://img.shields.io/badge/DOI-10.3389/fenvs.2021.657764-informational?style=flat&logo=doi&logoColor=white&color=CC2927)](https://doi.org/10.3389/fenvs.2021.657764)
+![Python](https://img.shields.io/badge/python-3.9+-blue?style=flat&logo=python&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Conda](https://img.shields.io/badge/environment-conda-orange?logo=anaconda)
+
+
 
 ## Identification
 
