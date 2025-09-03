@@ -56,22 +56,22 @@ Users can obtain the code by cloning the repository:
 bash
 git clone https://github.com/DejaBraz/Nocturnal-Low-Level-Jets.git
 cd Nocturnal-Low-Level-Jets
-´´´´
+
+````
 # Detailed Example
 
 ### 1. Data preprocessing
 
-```
+
 bash
 bash run_JBNN.sh
-´´´´
+
 ### 2. Index computation
-```
+
 python compute_index.py era5_input.nc nllj_index.nc
-´´´´
 
 ### 3. Visualization
-```
+
 python Mapa_JBNN.py 
 ´´´´
 
