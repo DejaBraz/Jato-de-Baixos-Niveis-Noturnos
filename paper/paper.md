@@ -14,7 +14,7 @@ authors:
 affiliations:
  - name: Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo (IAG-USP), Brazil
    index: 1
-date: 03 September 2025
+date: 2025-09-03
 bibliography: paper.bib
 ---
 
