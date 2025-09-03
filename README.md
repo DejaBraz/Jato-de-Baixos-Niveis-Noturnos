@@ -1,6 +1,6 @@
 
 # Nocturnal Low-Level Jets
-
+[![DOI Software](https://zenodo.org/badge/DOI/10.5281/zenodo.17049138.svg)](https://doi.org/10.5281/zenodo.17049138)
 [![DOI](https://img.shields.io/badge/DOI-10.3389/fenvs.2021.657764-informational?style=flat&logo=doi&logoColor=white&color=CC2927)](https://doi.org/10.3389/fenvs.2021.657764)
 ![Python](https://img.shields.io/badge/python-3.9+-blue?style=flat&logo=python&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
