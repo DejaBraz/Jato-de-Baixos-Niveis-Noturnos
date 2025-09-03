@@ -14,13 +14,9 @@ authors:
 affiliations:
  - name: Institute of Astronomy, Geophysics and Atmospheric Sciences, University of São Paulo (IAG-USP), Brazil
    index: 1
-date: 2025-09-03
+date: 7 August 2025
 bibliography: paper.bib
-date: 17 August 2025
-bibliography: paper.bib
-tags: [quality assurance, turbulence, OpenFOAM, Python, manufacturing]
-repository: https://github.com/dterrero/gbridge-pipe-qa
-archive_doi: 10.5281/zenodo.16890945
+
 ---
 
 # Summary
